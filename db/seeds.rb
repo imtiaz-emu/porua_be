@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.find_by_email('admin@porua.com')
+if user.blank?
+  puts 'Creating Admin User....'
+  user = User.create!(email: 'admin@porua.com', password: '123123123', password_confirmation: '123123123' )
+
+  user.remove_role :member if(user.has_role? :member)
+
+  user.add_role :admin
+else
+  puts 'Admin User already exist and skipping.'
+end
