@@ -40,5 +40,3 @@
 > Fork the repository then create pull request. 
 
 Happy Contributing!
-
-

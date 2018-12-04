@@ -8,7 +8,7 @@
 user = User.find_by_email('admin@porua.com')
 if user.blank?
   puts 'Creating Admin User....'
-  user = User.create!(email: 'admin@porua.com', password: '123123123', password_confirmation: '123123123' )
+  user = User.create!(email: 'admin@porua.com', password: '123123123', name: 'admin01' )
 
   user.remove_role :member if(user.has_role? :member)
 
