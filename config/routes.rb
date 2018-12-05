@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       post 'auth/login', to: 'users#login'
 
       resources :profiles, only: [:show, :update] do
-        collection do
-          get 'valid_username'
+        member do
+          post 'update_username'
         end
       end
 
